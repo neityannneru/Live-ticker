@@ -107,6 +107,7 @@ function getCombinedWeatherHTML() {
 
 // combinedItems配列を作成
 function updateCombinedItems() {
+  console.log("nextCombinedItems:", nextCombinedItems);
   const combinedWeather = getCombinedWeatherHTML();
   nextCombinedItems = [combinedWeather, ...newsTexts];
   pendingUpdate = true; // スクロールが切り替わったときに反映する
@@ -118,6 +119,7 @@ const speedWeather = 200; // 天気テロップの速度(px/秒)
 const speedNews = 100;   // ニューステロップの速度(px/秒)
 
 function startTicker() {
+  console.log("startTicker", combinedItems, currentIndex);
   if (combinedItems.length === 0) return;
   if (animationId) cancelAnimationFrame(animationId);
 
