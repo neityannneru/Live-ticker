@@ -70,7 +70,7 @@ async function fetchWeather() {
     console.error("天気取得失敗:", e);
     weatherHTMLs = [`<span>天気情報を取得できませんでした。</span>`];
   }
-  console.log("weatherHTMLs:", weatherHTMLs);
+
 
 }
 
@@ -95,7 +95,7 @@ async function fetchNews() {
     console.error("ニュース取得失敗:", e);
     newsTexts = ["ニュース情報を取得できませんでした。"];
   }
-  console.log("newsTexts:", newsTexts);
+
 }
 
 
@@ -170,12 +170,15 @@ function startTicker() {
 
 // 全更新
 async function updateAll() {
+  console.log("updateAll start");
   await fetchWeather();
   await fetchNews();
   updateCombinedItems();
   currentIndex = 0;
   startTicker();
+  console.log("updateAll end");
 }
+
 
 // 初回実行
 updateAll();
