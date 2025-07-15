@@ -70,6 +70,8 @@ async function fetchWeather() {
     console.error("天気取得失敗:", e);
     weatherHTMLs = [`<span>天気情報を取得できませんでした。</span>`];
   }
+  console.log("weatherHTMLs:", weatherHTMLs);
+
 }
 
 // ニュース取得（RSS→テキスト配列）
@@ -93,6 +95,7 @@ async function fetchNews() {
     console.error("ニュース取得失敗:", e);
     newsTexts = ["ニュース情報を取得できませんでした。"];
   }
+  console.log("newsTexts:", newsTexts);
 }
 
 
